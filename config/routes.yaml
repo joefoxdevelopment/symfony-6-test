@@ -1,0 +1,9 @@
+users_list:
+    path: /users
+    controller: App\Controller\Users\GetUsersController
+    methods: GET
+
+users_search:
+    path: /users-search
+    controller: App\Controller\Users\GetUserByNameController
+    methods: GET
