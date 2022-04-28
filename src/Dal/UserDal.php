@@ -11,9 +11,9 @@ class UserDal implements UserDalInterface
     public function getUsers(): array
     {
         return [
-            new User('Joe', 26),
-            new User('Mark C', 100),
-            new User('Dan', 21),
+            new User('Person1', 100),
+            new User('Person2', 100),
+            new User('Person3', 100),
         ];
     }
 
