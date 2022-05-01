@@ -9,6 +9,9 @@ use InvalidArgumentException;
 
 class UserDal implements UserDalInterface
 {
+    /**
+     * @return array<User>
+     */
     public function getUsers(): array
     {
         return [

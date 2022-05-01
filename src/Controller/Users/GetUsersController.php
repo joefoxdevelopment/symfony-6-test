@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Controller\Users;
 
 use App\Dal\UserDalInterface;
+use App\Entity\User;
 use Symfony\Component\HttpFoundation\Response;
 
 class GetUsersController
@@ -17,9 +18,10 @@ class GetUsersController
         $users = $this->userDal->getUsers();
 
         foreach ($users as $index => $user) {
+            if (!($user instanceof User)) continue;
             $users[$index] = $user->toArray();
         }
 
-        return new Response(json_encode($users));
+        return new Response((string) json_encode($users, JSON_THROW_ON_ERROR));
     }
 }

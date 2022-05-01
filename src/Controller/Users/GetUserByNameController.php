@@ -16,13 +16,13 @@ class GetUserByNameController
 
     public function __invoke(Request $request): Response
     {
-        $user = $this->search->searchByName($request->query->get('name', ''));
+        $user = $this->search->searchByName((string) $request->query->get('name', ''));
 
         if (null === $user)
         {
-            return new Response(json_encode([]));
+            return new Response((string) json_encode([], JSON_THROW_ON_ERROR));
         }
 
-        return new Response(json_encode($user->toArray()));
+        return new Response((string) json_encode($user->toArray(), JSON_THROW_ON_ERROR));
     }
 }

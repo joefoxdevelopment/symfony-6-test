@@ -21,6 +21,9 @@ class User
         return $this->age;
     }
 
+    /**
+     * @return mixed[]
+     */
     public function toArray(): array
     {
         return [
