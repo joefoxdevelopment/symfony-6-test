@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Dal;
 
 use App\Entity\User;
+use InvalidArgumentException;
 
 class UserDal implements UserDalInterface
 {
@@ -29,6 +30,6 @@ class UserDal implements UserDalInterface
             }
         }
 
-        throw new \InvalidArgumentException('User "' . $name . '" could not be found');
+        throw new InvalidArgumentException('User "' . $name . '" could not be found');
     }
 }
