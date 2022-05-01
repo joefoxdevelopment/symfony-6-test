@@ -29,6 +29,12 @@
     "phpspec/prophecy-phpunit": {
         "version": "v2.0.1"
     },
+    "phpstan/phpstan": {
+        "version": "1.6.3"
+    },
+    "phpstan/phpstan-symfony": {
+        "version": "1.1.8"
+    },
     "phpunit/php-code-coverage": {
         "version": "9.2.15"
     },
