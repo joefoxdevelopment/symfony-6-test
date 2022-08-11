@@ -10,7 +10,8 @@ use App\Dal\UserDalInterface;
 class Search
 {
     public function __construct(private UserDalInterface $userDal)
-    {}
+    {
+    }
 
     public function searchByName(string $name): ?User
     {

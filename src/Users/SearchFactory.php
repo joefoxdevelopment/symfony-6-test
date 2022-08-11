@@ -8,7 +8,7 @@ use App\Dal\UserDalInterface;
 
 class SearchFactory
 {
-    function __invoke(UserDalInterface $userDal): Search
+    public function __invoke(UserDalInterface $userDal): Search
     {
         return new Search($userDal);
     }

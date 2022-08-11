@@ -25,10 +25,8 @@ class UserDal implements UserDalInterface
     {
         $users = $this->getUsers();
 
-        foreach ($users as $user)
-        {
-            if (strtolower($user->getName()) === strtolower($name))
-            {
+        foreach ($users as $user) {
+            if (strtolower($user->getName()) === strtolower($name)) {
                 return $user;
             }
         }

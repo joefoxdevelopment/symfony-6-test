@@ -11,14 +11,17 @@ use Symfony\Component\HttpFoundation\Response;
 class GetUsersController
 {
     public function __construct(public UserDalInterface $userDal)
-    {}
+    {
+    }
 
     public function __invoke(): Response
     {
         $users = $this->userDal->getUsers();
 
         foreach ($users as $index => $user) {
-            if (!($user instanceof User)) continue;
+            if (!($user instanceof User)) {
+                continue;
+            }
             $users[$index] = $user->toArray();
         }
 

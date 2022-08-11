@@ -12,14 +12,14 @@ use Symfony\Component\HttpFoundation\Response;
 class GetUserByNameController
 {
     public function __construct(private Search $search)
-    {}
+    {
+    }
 
     public function __invoke(Request $request): Response
     {
         $user = $this->search->searchByName((string) $request->query->get('name', ''));
 
-        if (null === $user)
-        {
+        if (null === $user) {
             return new Response((string) json_encode([], JSON_THROW_ON_ERROR));
         }
 
